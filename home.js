@@ -23,9 +23,9 @@
 
 //CODE HERE
 
+const greetUser = username => `Welcome back, ${username}`
 
-
-
+console.log(greetUser(`Emmy`))
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -51,8 +51,14 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
-
-
+const canWeDeliver = zipCode => {
+    if (deliveryAreaZipCodes.includes(zipCode)) {
+    return `You're not too far away, lucky you`
+    }
+    else {return `Too far, get in the car lazy`
+    }
+}
+    console.log(canWeDeliver(77389))
 /* 
     Problem 2 Continued
 
@@ -71,6 +77,18 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
+
+// const canWeDeliver = zipCode => {
+//     for (let i = 0; i < deliveryAreaZipCodes.length; i++) {
+//         if (deliveryAreaZipCodes[i] === zipCode)
+//         return `You're not too far away, lucky you`
+//         }
+//         {return `Too far, get in the car lazy`
+//      }
+//     }
+
+// console.log(canWeDeliver(77389))
+
 
 
 //////////////////PROBLEM 3////////////////////
@@ -108,6 +126,8 @@ const deals = [
 
 //CODE HERE
 
+let stingyOwner = deals.replace(`15`, `10`)
+
 
 
 /*
@@ -124,3 +144,5 @@ const deals = [
 */
 
 //CODE HERE
+
+let stingyOwner = deals.replace(`March`, `April`)

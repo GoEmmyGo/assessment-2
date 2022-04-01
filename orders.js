@@ -31,7 +31,14 @@
 
 //CODE HERE
 
-
+class Ticket {
+    constructor(items, orderTime, customerId){
+        this.items = items;
+        this.orderTime = orderTime;
+        this.customerId = customerId;
+        this.status = queued
+    }
+}
 
 /*
     Create a new instance of your class.
@@ -45,7 +52,7 @@
 */
 
 //CODE HERE
-
+let firstTicket = new Ticket(`olive pizza, duh`, `7:03 PM`, `575`)
 
 /*
     Call the `updateStatus` method on
