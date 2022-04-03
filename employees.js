@@ -23,15 +23,16 @@
 
 class Employee {
     constructor(name, shifts){
-        this.name = name;
+        this.name = name
         this.shifts = shifts
     }
 
     getSchedule(){
-        console.log(this.name ` works on `, this.shifts)
+        console.log(`${this.name} works on ${this.shifts}`)
     }
 }
 
+//think you do need the template literal
 /*
     Create a new instance of your class.
     Save it to a variable called `empOne`.
@@ -52,8 +53,10 @@ let empOne = new Employee(`Bartholomew`, `weekends only`)
 */
 
 //CODE HERE
-getSchedule(empOne)
+//getSchedule(empOne)
 
+empOne.getSchedule()
+console.log(empOne)
 /*
     Make a copy of the empOne object
     using the spread operator.
@@ -68,7 +71,10 @@ getSchedule(empOne)
 
 //CODE HERE
 
+const empTwo = {...empOne, name: "Nick"}
 
+// or const empTwo = {...empOne}
+// empTwo.name = "Nick"
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -79,6 +85,7 @@ getSchedule(empOne)
     new one: employees, which will be an array of 
     employees that report to this manager. 
     (Hint: don't forget to call the super function)
+
 
     Create a method called `getEmployees` that
     console.logs a string:
@@ -95,7 +102,20 @@ getSchedule(empOne)
 
 //CODE HERE
 
+class Manager extends Employee {
+    constructor(name, shifts, employees){
+        super(name, shifts)
+        this.employees = employees
+    }
 
+    getEmployees(){
+        console.log(`${this.name} manages ${this.employees}`)
+    } 
+
+    addEmployee(emp){
+       this.employees.push(emp)
+    } 
+}
 
 /*
     Create a new instance of your class.
@@ -110,6 +130,7 @@ getSchedule(empOne)
 
 //CODE HERE
 
+let manager = new Manager ('Loneston', 'never', ['nobody'])
 
 /*
     Call the `getEmployees` method on the
@@ -117,6 +138,8 @@ getSchedule(empOne)
 */
 
 //CODE HERE
+
+manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -126,6 +149,8 @@ getSchedule(empOne)
 
 //CODE HERE 
 
+manager.addEmployee('somebody')
+
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -133,3 +158,5 @@ getSchedule(empOne)
 */
 
 //CODE HERE
+
+manager.getEmployees()

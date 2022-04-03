@@ -35,9 +35,10 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce((acc, cost) => acc + cart.cost, 0)
+const summedPrice = cart.reduce((acc, cost) => {
+    return acc + cost.price}, 0)
 
-// console.log(summedPrice)
+console.log(summedPrice)
 
 // const summedPrice = cart.reduce(/* CALLBACK HERE */)
 
@@ -60,12 +61,12 @@ const cart = [
 //CODE HERE
 
 const calcFinalPrice = (cartTotal, couponValue, tax) => {
-    let cartTaxTotal = ((cartTotal * tax) + cartTotal){
-        return ((cartTaxTotal - couponValue)
+    let cartTaxTotal = ((cartTotal * tax) + cartTotal)
+        return (cartTaxTotal - couponValue)
     }
     
 
-
+console.log(calcFinalPrice(10, 2, .25))
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -87,9 +88,15 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => {
 */
 
 /*
-    TEXT ANSWER HERE
-
+const customer = {
+    name: 'string',
+    membership: boolean,
+    id: number,
+    zipcode: number
+}
 */
+
+
 
 /*
     Now, create a customer object following your own
@@ -97,3 +104,9 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => {
 */
 
 //CODE HERE
+const customer = {
+    name: 'Cornelius',
+    membership: true,
+    id: 666,
+    zipcode: 05621
+}

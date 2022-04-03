@@ -74,6 +74,8 @@ console.log(pizza.tags[1])
 
 let {price: cost} = pizza
 
+//let {price} = pizza
+
 console.log(cost)
 /*
     Fourth, and last, destructure the category
@@ -101,8 +103,45 @@ console.log(category)
 
 //CODE HERE
 
+//Had to bail and start the design portion here
 
-
+const foodArr = [
+   {name: `Mushroom Pizza`,
+    price: 13,
+    category: `Main Dish`,
+    popularity: 1,
+    rating: 100,
+    tags: [`Alfredo Sauce`, 'Rich']
+    },
+    {name: `Hot Wings`,
+    price: 7,
+    category: `Starters`,
+    popularity: 3,
+    rating: 97,
+    tags: [`Deadly spicy`, 'Milk is not an option', 'Top Ten']
+    },
+    {name: `Soft Pretzels`,
+    price: 8,
+    category: `Starters`,
+    popularity: 5,
+    rating: 89,
+    tags: [`Mustard Lovers`, `Cheese Dip`, `Kid-Friendly`]
+    },
+    {name: `Oreo Cheesecake`,
+    price: 6,
+    category: `Desserts`,
+    popularity: 1,
+    rating: 99,
+    tags: [`Zagat Rated`, `Decadent`, `Must-Have`]
+    },
+    {name: `Hazy IPA`,
+    price: 5,
+    category: `Drinks`,
+    popularity: 1,
+    rating: 98,
+    tags: [`Super Sour`, `Floral`]
+    },
+ ]
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -117,10 +156,13 @@ console.log(category)
 
 //CODE HERE
 
-const filteredFood = foodArr.filter('superb')
+//const filteredFood = foodArr.filter('superb')
 
+const filteredFood = foodArr.filter(pizzaTagsCallback => {
+    return pizzaTagsCallback.tags.includes('Zagat Rated')
+    })
 
-
+console.log(filteredFood)
 //////////////////PROBLEM 5////////////////////
 /* 
     Now let's write a function that's a little
@@ -162,6 +204,18 @@ const filteredFood = foodArr.filter('superb')
 
 //CODE HERE
 
+const filterByProperty = (property, number, type) => {
+    const filteredArr = foodArr.filter(pizza => {
+        if (type === 'above') {
+            return pizza[property] > number
+        } else if (type === 'below') {
+            return pizza[property] < number
+        } else {
+            return 'you did not pass a valid type'
+        }
+    })
+    return filteredArr
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -171,3 +225,5 @@ const filteredFood = foodArr.filter('superb')
 */
 
 //CODE HERE
+
+console.log(filterByProperty('popularity', 1, 'above'))
